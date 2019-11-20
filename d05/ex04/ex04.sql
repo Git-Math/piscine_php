@@ -1,0 +1,1 @@
+UPDATE ft_table SET date_de_creation = CASE WHEN id > 5 THEN DATE_ADD(date_de_creation, INTERVAL 20 YEAR) ELSE date_de_creation END;

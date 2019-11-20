@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+<body>
+	<input type="text">
+	<select id="ope">
+	  <option value="+">+</option>
+	  <option value="-">-</option>
+	  <option value="*">*</option>
+	  <option value="/">/</option>
+	  <option value="%">%</option>
+	</select>
+	<input type="text">
+	<input type="submit" id="sub" value="Try me!">
+	<script>
+		$(document).ready(function(){
+			setInterval(function(){ alert("Please, use me..."); }, 30000);
+			$("#sub").click(function(){
+				var l = $('input[type=text]:first' ).val();
+				var r = $('input[type=text]:last' ).val();
+				var op = $("#ope option:selected").text();
+				var result;
+				var ret = 0;
+				l = parseFloat(l);
+    			r = parseFloat(r);
+    			if (r == 0 && (op == "/" || op == "%"))
+    			{
+        			alert("It’s over 9000!");
+        			console.log("It’s over 9000!");
+        			ret = 1;
+    			}
+    			if (!Number.isInteger(l) || !Number.isInteger(r) || l < 0 || r < 0)
+        		{
+            		alert("Error :(");
+            		ret = 1;
+        		}
+    			if (ret)
+    				return;
+    			if (op == "+")
+        			result = l + r;
+    			else if (op == "-")
+        			result = l - r;
+    			else if (op == "*")
+        			result = l * r;
+    			else if (op == "/")
+        			result = l / r;
+    			else
+        			result = l % r;
+    			alert(result);
+    			console.log(result);
+			})
+		});
+	</script>
+</body>
+</html>

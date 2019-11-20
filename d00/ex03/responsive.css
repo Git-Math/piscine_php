@@ -1,0 +1,26 @@
+.symbol {
+		text-align:center;
+		font-size:2vmin;
+}
+.number {
+		text-align:left;
+		font-size:1vmin;
+}
+.weight {
+		text-align:right;
+		font-size:1vmin;
+}
+.non_metaux {background-color:#B4BBA1;}
+.alcalins {background-color:#C4C4C4;}
+.alcalino_terreux {background-color:#C4B89E;}
+.transition {background-color:#E5DEC5;}
+.pauvres {background-color:#E2E3DF;}
+.metalloides {background-color:#E3CFC8;}
+.halogenes {background-color:#F4F0CA;}
+.gaz_nobles {background-color:#DEF0F1;}
+.lanthanides {background-color:#CCC5D5;}
+.actinides {background-color:#E9DDEA;}
+td {
+   width:5.55%;
+   height:11.11%;
+}

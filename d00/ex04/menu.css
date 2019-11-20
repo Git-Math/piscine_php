@@ -1,0 +1,74 @@
+#menu, .sub-list{
+	   padding:0;
+	   margin:0;
+	   text-align:center;
+}
+.main-list{
+	display:inline-block;
+	position:relative;
+	border-radius:8px 8px 0 0;
+}
+.sub-list{
+	display:inherit;
+	border-radius:0;
+}
+.sub-list:hover{
+	border-radius:0;
+}
+.sub-list:last-child{
+	border-radius:0 0 8px 8px;
+}
+.sub-list{
+	position:absolute;
+	left: 0;
+	right: 0;
+	max-height:0;
+	overflow:hidden;
+	transition: .5s;
+}
+.main-list:hover ul{
+				 max-height:15em;
+}
+/* background des liens menus */
+#A{
+	background-image:linear-gradient(to bottom, #FA5858 0%, #8A0808 100%);
+}
+#B{
+	background-image:linear-gradient(to bottom, #58ACFA 0%, #045FB4 100%);
+}
+#C{
+	background-image:linear-gradient(to bottom, #A9F5A9 0%, #04B404 100%);
+}
+#D{
+	background-image:linear-gradient(to bottom, #F7D358 0%, #886A08 100%);
+}
+/* background des liens sous menus */
+#A li{
+   background:#8A0808;
+}
+#B li{
+   background:#045FB4;
+}
+#C li{
+   background:#04B404;
+}
+#D li{
+   background:#886A08;
+}
+a{
+	text-decoration:none;
+	display:block;
+	padding:8px 32px;
+	color:white;
+	font-family:arial;
+}
+.sub-list a{
+		  padding:8px 0;
+}
+/* color l'element selectionné */
+.main-list:hover li a{
+				 color:white;
+}
+.main-list:hover a, .main-list li:hover a{
+				 color:black;
+}

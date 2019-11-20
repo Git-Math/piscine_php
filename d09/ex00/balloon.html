@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Balloon</title>
+	<style>
+	div
+	{
+		height: 200px;
+		width: 200px;
+		background-color: red;
+		border-radius: 100%;
+	}
+	</style>
+</head>
+<body>
+<div id="balloon" onclick="zoom()" onmouseout="dezoom()"></div>
+<script>
+function zoom()
+{
+	var bal = document.getElementById("balloon");
+	if (bal.style.height < 420 + 'px')
+	{
+		bal.style.height = bal.offsetHeight + 10 + 'px';
+		bal.style.width = bal.offsetWidth + 10 + 'px';
+	}
+	else
+	{
+		bal.style.height = 200 + 'px';
+		bal.style.width = 200 + 'px';
+	}
+	if (bal.style.backgroundColor == 'red')
+		bal.style.backgroundColor = 'green';
+	else if (bal.style.backgroundColor == 'green')
+		bal.style.backgroundColor = 'blue';
+	else if (bal.style.backgroundColor == 'blue')
+		bal.style.backgroundColor = 'red';
+	else
+		bal.style.backgroundColor = 'green';
+}
+function dezoom()
+{
+	var bal = document.getElementById("balloon");
+	if (bal.style.height > 200 + 'px')
+	{
+		bal.style.height = bal.offsetHeight - 5 + 'px';
+		bal.style.width = bal.offsetWidth - 5 + 'px';
+	}
+	if (bal.style.backgroundColor == 'red')
+		bal.style.backgroundColor = 'blue';
+	else if (bal.style.backgroundColor == 'blue')
+		bal.style.backgroundColor = 'green';
+	else if (bal.style.backgroundColor == 'green')
+		bal.style.backgroundColor = 'red';
+	else
+		bal.style.backgroundColor = 'blue';
+
+}
+</script>
+</body>
+</html>

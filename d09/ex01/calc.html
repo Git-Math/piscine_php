@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Calc</title>
+</head>
+<body>
+<div>
+	<input type="text" id="left">
+	<select id="ope">
+		<option>+</option>
+		<option>-</option>
+		<option>*</option>
+		<option>/</option>
+		<option>%</option>
+	</select>
+	<input type="text" id="right">
+	<input type="submit" value="Try me!" onclick="calc()">
+</div>
+<script>
+setInterval(function(){alert("Please, use me...");}, 30000);
+function calc()
+{
+	var l = document.getElementById("left").value;
+	var r = document.getElementById("right").value;
+	var i = document.getElementById("ope").selectedIndex;
+	var tab = document.getElementById("ope").options;
+	var result;
+	var ret = 0;
+	l = parseFloat(l);
+	r = parseFloat(r);	
+	if (r == 0 && (tab[i].text == "/" || tab[i].text == "%"))
+    {
+    	alert("It’s over 9000!");
+    	console.log("It’s over 9000!");
+    	ret = 1;
+    }	
+	if (!Number.isInteger(l) || !Number.isInteger(r) || l < 0 || r < 0)
+	{
+		alert("Error :(");
+		ret = 1;
+	}
+	if (ret)
+		return;
+	if (tab[i].text == "+")
+		result = l + r;
+	else if (tab[i].text == "-")
+		result = l - r;
+	else if (tab[i].text == "*")
+		result = l * r;
+	else if (tab[i].text == "/")
+		result = l / r;
+	else
+		result = l % r;
+	alert(result);
+	console.log(result);
+}
+</script>
+</body>
+</html>
