@@ -1,2 +1,2 @@
 # Piscine PHP
-Exercices to learn PHP.
+Exercises to learn PHP.
